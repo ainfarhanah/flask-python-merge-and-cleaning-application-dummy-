@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master</title>
+</head>
+<body>
+    <h1>Master</h1>
+    <table border="0">
+        <tr>
+            <td><a href="{{url_for('download_file')}}"><input type="submit" value="Download Master"/></a></td>
+            <td>
+                <form action="/UE_format" method="POST">
+                    <input type='submit' name='submit' value='UE Format'>
+                </form>
+            </td>
+            <td>
+                <form action="/TNB_format" method="POST">
+                    <input type='submit' name='submit' value='TNB Format'>
+                </form>
+            </td>
+        </tr>
+    </table><br>
+    
+    {% for item in data %}
+    {{titles['loop.index']}}
+    {{ item|safe}}
+    {% endfor  %}
+
+</body>
+</html>
