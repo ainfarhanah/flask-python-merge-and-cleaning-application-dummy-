@@ -58,7 +58,7 @@ def merger():
             df_for_concat = pd.read_csv(i, index_col=None)
             list_dir.append(df_for_concat)
         
-        result = pd.concat(list_dir, ignore_index=True, join='inner')
+        result = pd.concat(list_dir, ignore_index=True)
        
         #Export to csv
         result.to_csv( "master.csv", index=False, encoding='utf-8-sig')
